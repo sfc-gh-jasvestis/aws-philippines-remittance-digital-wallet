@@ -120,7 +120,7 @@ Industry research and Snowflake customer outcomes:
 - **GCash reached 94M registered users in Philippines by end of 2023** — [Globe Fintech](https://www.globe.com.ph/about-us/newsroom.html)
 - **Digital payment fraud losses in APAC grew 28% in 2023 to $4.2B** — [LexisNexis Risk](https://risk.lexisnexis.com/global/en/insights-resources/research)
 - **Real-time fraud detection reduces losses by 50-70% vs batch processing** — [McKinsey Payments](https://www.mckinsey.com/industries/financial-services/our-insights/global-payments)
-
+- **Western Union** (Snowflake customer): processes 1B+ cross-border transactions on Snowflake with real-time compliance and fraud detection across 200+ countries -- [snowflake.com/customers/western-union](https://www.snowflake.com/en/customers/all-customers/case-study/western-union/)
 
 ## Key Demo Numbers
 
