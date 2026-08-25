@@ -116,7 +116,7 @@ Run all scripts including AWS integration. Deploy QuickSight dashboard from `qui
 ## Business Impact
 
 Industry research and Snowflake customer outcomes:
-- **Philippine digital payments reached ₱8.7 trillion in 2023 — 52.8% of total retail payments** — [BSP](https://www.bsp.gov.ph/Pages/digital-payments-transformation.aspx)
+- **Philippine digital payments reached ₱8.7 trillion in 2023 — 52.8% of total retail payments** — [BSP](https://www.bsp.gov.ph/SitePages/PaymentAndSettlement/PaymentAndSettlement.aspx)
 - **GCash reached 94M registered users in Philippines by end of 2023** — [Globe Fintech](https://www.globe.com.ph/about-us/newsroom.html)
 - **Digital payment fraud losses in APAC grew 28% in 2023 to $4.2B** — [LexisNexis Risk](https://risk.lexisnexis.com/global/en/insights-resources/research)
 - **Real-time fraud detection reduces losses by 50-70% vs batch processing** — [McKinsey Payments](https://www.mckinsey.com/industries/financial-services/our-insights/global-payments)
