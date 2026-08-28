@@ -35,36 +35,36 @@ export default function HomePage() {
   const executiveCockpit = (
     <div className="space-y-6">
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <KPICard title="Total Volume" value="₱2.4B" status="neutral" />
-        <KPICard title="AML Flags" value="7" status="warning" />
-        <KPICard title="Anomalies Detected" value="3" status="danger" />
-        <KPICard title="Active Corridors" value="124" status="neutral" />
+        <KPICard title="Wallet Users" value="14.2M" status="neutral" />
+        <KPICard title="Monthly Active" value="8.7M" status="neutral" />
+        <KPICard title="Avg Balance" value="₱4,200" status="neutral" />
+        <KPICard title="Transactions (MTD)" value="42M" status="neutral" />
       </div>
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
         <Chart
           data={data?.timeseries || [{ period: 'Loading', value: 0 }]}
           type="line"
           xKey="period"
-          yKeys={[{ key: 'value', name: 'Volume' }]}
-          title="Volume Trend (Weekly)"
+          yKeys={[{ key: 'value', name: 'Users (M)' }]}
+          title="User Growth (Monthly)"
         />
         <Chart
           data={data?.categories || [{ category: 'Loading', count: 0 }]}
           type="bar"
           xKey="category"
-          yKeys={[{ key: 'count', name: 'Count' }]}
-          title="AML Flags by Corridor"
+          yKeys={[{ key: 'count', name: '₱B' }]}
+          title="Transaction Volume by Type"
         />
       </div>
       <DataTable
         columns={[
           { key: 'id', header: '#' },
-          { key: 'name', header: 'Corridor' },
-          { key: 'status', header: 'Status' },
-          { key: 'value', header: 'Volume' },
+          { key: 'name', header: 'Service' },
+          { key: 'status', header: 'Growth' },
+          { key: 'value', header: 'Volume (₱B)' },
         ]}
         data={data?.entities || []}
-        title="Corridor Performance"
+        title="Service Performance"
       />
     </div>
   );
@@ -72,16 +72,16 @@ export default function HomePage() {
   const domainTab1 = (
     <div className="space-y-6">
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-        <KPICard title="Efficiency" value="87%" />
-        <KPICard title="Utilization" value="72%" />
-        <KPICard title="Growth Rate" value="+8.4%" />
+        <KPICard title="P2P Transfers" value="₱84B" />
+        <KPICard title="Bill Payments" value="₱24B" />
+        <KPICard title="Merchant Spend" value="₱18B" />
       </div>
       <Chart
         data={data?.detail || [{ x: 'Loading', y: 0 }]}
         type="area"
         xKey="x"
-        yKeys={[{ key: 'y', name: 'Index' }]}
-        title="Digital Wallet Performance Trend"
+        yKeys={[{ key: 'y', name: 'Share %' }]}
+        title="Transaction Mix Trend"
         height={400}
       />
     </div>
@@ -94,17 +94,17 @@ export default function HomePage() {
           data={data?.breakdown || [{ label: 'A', value: 30 }, { label: 'B', value: 70 }]}
           type="pie"
           xKey="label"
-          yKeys={[{ key: 'value', name: 'Score' }]}
-          title="Risk Distribution"
+          yKeys={[{ key: 'value', name: 'Retention %' }]}
+          title="User Cohort Retention"
         />
         <ActionMemo
-          persona={{ name: 'Philippines Operations Lead', role: 'Director of Digital Wallet' }}
+          persona={{ name: 'Jasmine Tan-Garcia', role: 'VP Digital Wallet' }}
           context={{}}
           onGenerate={async () => ({
             subject: 'Action Required',
             body: 'AI-generated recommendation based on current data patterns and predicted trends.',
             urgency: 'HIGH',
-            actions: ['Review top aml flags findings', 'Optimize corridor allocation', 'Prepare quarterly digital wallet report'],
+            actions: ['Launch cashback campaign for dormant users (2.4M target)', 'Expand QR payment acceptance to 50K sari-sari stores', 'Integrate InstaPay for real-time bank transfers'],
           })}
         />
       </div>
@@ -116,9 +116,9 @@ export default function HomePage() {
       <AskAI
         title="Ask AI"
         sampleQuestions={[
-          'Which corridors have the highest aml flags?',
-          'Show volume trend for the last 30 days',
-          'What is the forecast for next quarter's volume?',
+          'What drives user activation after signup?',
+          'Show transaction frequency by user segment',
+          'Which features have the highest impact on retention?',
         ]}
         mode="both"
         onSubmit={async (question, mode) => {
@@ -178,8 +178,8 @@ export default function HomePage() {
 
   const tabs = [
     { id: 'executive-cockpit', label: 'Executive Cockpit', icon: '📊', content: executiveCockpit },
-    { id: 'domain-1', label: 'Digital Wallet Analytics', icon: '📈', content: domainTab1 },
-    { id: 'domain-2', label: 'Alerts & Actions', icon: '⚡', content: domainTab2 },
+    { id: 'domain-1', label: 'User Behavior', icon: '📈', content: domainTab1 },
+    { id: 'domain-2', label: 'Growth & Retention', icon: '⚡', content: domainTab2 },
     { id: 'ask-ai', label: 'Ask AI', icon: '🤖', content: askAiTab },
     { id: 'architecture', label: 'Architecture & Data', icon: '🏗️', content: architectureTab },
   ];
