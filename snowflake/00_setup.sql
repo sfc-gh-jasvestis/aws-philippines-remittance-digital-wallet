@@ -1,16 +1,13 @@
--- ============================================================================
--- Digital Wallet & Payments Hub Analytics
--- GCash and Maya have 90M+ accounts — Snowflake detects payment fraud in real-time with anomaly detection, monitors wallet ecosystem health, and alerts on suspicious patterns before losses materialize.
--- ============================================================================
-USE ROLE ACCOUNTADMIN;
-CREATE DATABASE IF NOT EXISTS DIGITAL_WALLET;
-CREATE WAREHOUSE IF NOT EXISTS WALLET_WH WAREHOUSE_SIZE = 'MEDIUM' AUTO_SUSPEND = 120 AUTO_RESUME = TRUE;
-USE DATABASE DIGITAL_WALLET;
-CREATE SCHEMA IF NOT EXISTS RAW;
-CREATE SCHEMA IF NOT EXISTS CURATED;
-CREATE SCHEMA IF NOT EXISTS ML;
-CREATE SCHEMA IF NOT EXISTS AI;
-CREATE SCHEMA IF NOT EXISTS SEARCH;
-CREATE SCHEMA IF NOT EXISTS APP;
+-- Generated from generator/demo_specs/aws-philippines-remittance-digital-wallet.json
+-- Regenerate with: python3 generator/gen_repo_docs.py aws-philippines-remittance-digital-wallet
+-- This is the schema that is actually deployed for PH_REMITTANCE_DIGITAL_WALLET.
 
-USE WAREHOUSE WALLET_WH;
+-- PH_REMITTANCE_DIGITAL_WALLET  (Digital Wallet & Payments Hub Analytics)
+-- generated from generator/demo_specs/aws-philippines-remittance-digital-wallet.json - do not hand-edit
+CREATE DATABASE IF NOT EXISTS PH_REMITTANCE_DIGITAL_WALLET;
+CREATE SCHEMA IF NOT EXISTS PH_REMITTANCE_DIGITAL_WALLET.RAW;
+CREATE SCHEMA IF NOT EXISTS PH_REMITTANCE_DIGITAL_WALLET.CURATED;
+CREATE SCHEMA IF NOT EXISTS PH_REMITTANCE_DIGITAL_WALLET.APP;
+USE DATABASE PH_REMITTANCE_DIGITAL_WALLET;
+
+-- 5 real regions; entity names carry their region so the two always agree
