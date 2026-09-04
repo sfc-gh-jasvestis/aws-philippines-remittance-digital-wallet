@@ -53,6 +53,7 @@ export default function HomePage() {
         <div className="lg:col-span-1">
           <GeoMap
             country="philippines"
+            labels={{ entity: 'Services', event: 'Transactions', alert: 'Failed Txns' }}
             regions={data?.regions}
             markers={[{"label": "Manila", "value": "Ops center", "color": "blue", "size": "lg"}, {"label": "Cebu", "value": "Regional", "color": "green", "size": "md"}, {"label": "Davao", "value": "Branch", "color": "green", "size": "sm"}]}
             routes={[]}
@@ -83,8 +84,11 @@ export default function HomePage() {
         columns={[
           { key: 'id', header: '#' },
           { key: 'name', header: 'Service' },
+          { key: 'region', header: 'Region' },
           { key: 'status', header: 'Growth' },
-          { key: 'value', header: 'Volume (₱B)' },
+          { key: 'm1', header: 'Volume (₱B)' },
+          { key: 'events', header: 'Transactions' },
+          { key: 'alerts', header: 'Failed Txns' },
         ]}
         data={data?.entities || []}
         title="Service Performance"
